@@ -23,6 +23,7 @@ namespace WpfAppMVVM
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new Model();
         }
     }
 }

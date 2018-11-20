@@ -15,7 +15,7 @@
 
         <DockPanel>
             <TextBlock Text="Added Names" DockPanel.Dock="Top" Margin="5,3"/>
-            <ListBox></ListBox>
+            <ListBox ItemsSource="{Binding AddedNames}"></ListBox>
         </DockPanel>
 
         <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" Width="5" Background="Gray" HorizontalAlignment="Left" />
@@ -32,12 +32,12 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Text="Name" Margin="5,3"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="5,3"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding CurrentName, UpdateSourceTrigger=PropertyChanged}" Margin="5,3"/>
 
             <TextBlock Grid.Row="1" Text="Your name is:" Margin="5,3"/>
-            <TextBlock Grid.Row="1" Grid.Column="1" Margin="5,3"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CurrentName}" Margin="5,3"/>
 
-            <Button Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Content="Add Me" Margin="5,3" MinWidth="75" />
+            <Button Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Content="Add Me" Command="{Binding AddCommand}" Margin="5,3" MinWidth="75" />
 
         </Grid>
 
